@@ -4,7 +4,7 @@ const PORT = process.env.PORT ?? 8080;
 
 app.get("/", (req, res) => {
    res.json({
-    msg  : "BACKEND NODE JS APPLICATION TESTING AND  RUNNING IN THE EC2  ",
+    msg  : "BACKEND NODE JS APPLICATION TESTING AND  RUNNING IN THE SERVER11111  ",
   });
 });
 
