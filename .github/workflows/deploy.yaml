@@ -5,7 +5,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
 
     steps:
       - name: "Check Out Code "
@@ -21,4 +21,4 @@ jobs:
             git pull
             npm install
             npm start
-            
+
