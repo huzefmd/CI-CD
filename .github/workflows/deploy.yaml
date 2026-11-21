@@ -1,0 +1,24 @@
+name: Automate deployement
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu
+
+    steps:
+      - name: "Check Out Code "
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-actions@v1.0.3
+        with:
+          host: ${{secrets.SSH_HOST }}
+          username: ubuntu
+          key: ${{secrets.SSH_KEY}}
+          script: cd /home/ubuntu/CI-CD
+            git pull
+            npm install
+            npm start
+            
